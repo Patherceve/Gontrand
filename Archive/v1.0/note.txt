@@ -1,0 +1,4 @@
+This is the first verison of Gontrand with 2 DC motors controled with:
+	-Raspberry Pi 3
+	-L293D dual motor controler
+	-Rover5 chassi
