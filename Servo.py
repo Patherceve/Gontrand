@@ -19,10 +19,18 @@ class Servo:
         pwm.set_pwm(self.channel, 0, 0)
     
     def changePos(self, newPos):
-        if(self.currentPos > newPos)
-            #
-        elif(self.currentPos < newPos)
-            #
-        else
+        if(self.currentPos > newPos):
+            for p in range(self.currentPos, (newPos - 1), -1):
+                pwm.set_pwm(self.channel, 0, self.pulseRange[p])
+                time.sleep(0.08)
+            self.currentPos = p
+            pwm.set_pwm(self.channel, 0, self.pulseRange[p])
+        elif(self.currentPos < newPos):
+            for p in range(self.currentPos, (newPos + 1), 1):
+                pwm.set_pwm(self.channel, 0, self.pulseRange[p])
+                time.sleep(0.08)
+            self.currentPos = p
+            pwm.set_pwm(self.channel, 0, self.pulseRange[p])
+        else:
             pwm.set_pwm(self.channel, 0, 0)
         self.currentPos = newPos
