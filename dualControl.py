@@ -3,7 +3,6 @@
 #Version 2.0 for motor controler L298HN
 
 import RPi.GPIO as GPIO
-import time
 from Motor import *
 
 def setup():
